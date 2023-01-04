@@ -42,6 +42,7 @@ CREATE TABLE employees(
 CREATE TABLE dept_emp (
 	emp_no INTEGER NOT NULL,
 	dept_no VARCHAR NOT NULL,
+	CONSTRAINT dept_emp_comp_pk PRIMARY KEY (emp_no,dept_no),
 	CONSTRAINT dept_emp_fk_employees FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
 	CONSTRAINT dept_emp_fk_departments FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
 );
